@@ -13,18 +13,25 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name="job_positions")
+@Table(name = "employers")
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class JobPosition{
-	
+public class Employer extends User{
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
-	@Column(name = "id")
+	@Column(name = "employers_id")
 	private int id;
+
+	@Column(name = "company_name")
+	private String companyName;
 	
-	@Column(name = "title")
-	private String name;
+	@Column(name = "web_site")
+	private String website;
+	
+	@Column(name = "phone_number")
+	private String phoneNumber;
+	
 }
